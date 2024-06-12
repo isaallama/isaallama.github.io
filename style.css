@@ -132,7 +132,7 @@ body {
 
 .services-container {
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; 
@@ -141,7 +141,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 750px;
+  height: 950px;
   margin: 0px -150px;
 
 }
