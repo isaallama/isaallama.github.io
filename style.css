@@ -146,6 +146,12 @@ body {
 
 }
 
+@media (max-width: 768px) {
+  body {
+    font-size: 90%; 
+  }
+}
+
 
 .service-item {
   background-color: #F4F4F4;
@@ -308,4 +314,58 @@ footer>p a {
 
 footer>p a:hover {
   color: #0B60B0;
+}
+
+
+/* media queries mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 90%;
+  }
+
+  .header {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .header-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .header-menu {
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0;
+  }
+
+  .header-menu-item {
+    font-size: 12px;
+  }
+
+  .container-main {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .text {
+    width: 100%;
+  }
+
+  .service-item {
+    flex: 0 1 100%;
+    padding: 10px;
+  }
+
+  .images-row img {
+    width: 100%;
+  }
+
+  .background-image-container {
+    height: 200px;
+  }
+
+  footer {
+    flex-direction: column;
+  }
 }
