@@ -23,8 +23,8 @@ btnConhecaNos.addEventListener('click', function (event) {
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    document.getElementById('pdfForm').addEventListener('submit', function(event) {
-        event.preventDefault(); 
+    document.getElementById('pdfForm').addEventListener('submit', function (event) {
+        event.preventDefault();
 
         openPdf();
     });
