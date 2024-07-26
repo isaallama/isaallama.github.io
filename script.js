@@ -1,3 +1,14 @@
+function carregarConteudoAssincrono(url, containerId) {
+    fetch(url)
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById(containerId).innerHTML = html;
+        })
+        .catch(error => {
+            console.error('Erro ao carregar conteúdo:', error);
+        });
+}
+
 let btnWhatsapp = document.querySelector('#whatsapp-link');
 
 btnWhatsapp.addEventListener('click', function (event) {
@@ -14,30 +25,38 @@ btnInstagram.addEventListener('click', function (event) {
 });
 
 
-let btnConhecaNos = document.querySelector('#btnConhecaNos');
+document.addEventListener('DOMContentLoaded', function () {
 
-btnConhecaNos.addEventListener('click', function (event) {
-    event.preventDefault();
-    window.location.href = 'sobre.html';
-});
+    const userDataString = localStorage.getItem('userData');
+    if (userDataString) {
+        const userData = JSON.parse(userDataString);
+        document.getElementById('name').value = userData.name;
+        document.getElementById('phone').value = userData.phone;
+        document.getElementById('email').value = userData.email;
+    }
 
-
-document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('pdfForm').addEventListener('submit', function (event) {
         event.preventDefault();
 
-        openPdf();
-    });
 
-    function openPdf() {
         let name = document.getElementById('name').value;
         let phone = document.getElementById('phone').value;
         let email = document.getElementById('email').value;
 
+
         if (name == '' || phone == '' || email == '') {
             alert('Por favor, preencha todos os campos');
         } else {
+
+            const userData = {
+                name: name,
+                phone: phone,
+                email: email
+            };
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+
             window.location.href = 'ebook-fuscar.pdf';
         }
-    }
+    });
 });
